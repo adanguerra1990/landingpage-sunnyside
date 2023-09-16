@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+// Fuentes
+$fuenteBarlow: 'Barlow', sans-serif;
+$fuenteFraunces: 'Fraunces', serif;
+
+// Colores Primarios
+$rosa: hsl(7, 99%, 70%);
+
+$amarillo: hsl(51, 100%, 49%);
+$amarilloTransparent: hsla(51, 100%, 49%, 0.192);
+$cianOscuro: hsl(167, 40%, 24%);
+$azulOscuro: hsl(198, 62%, 26%);
+$cianModerado: hsl(168, 34%, 41%);
+$cianfooter: hsl(167, 44%, 70%);
+
+// Neutrales
+$azulDesaturadoOscuro: hsl(212, 27%, 19%);
+$azulGrisaceoMuyOscuro: hsl(213, 9%, 39%);
+$azulGrisaceoOscuro: hsl(232, 10%, 55%);
+$azulgrisaceo: hsl(210, 4%, 67%);
+$blanco: hsl(0, 0%, 100%);
+
+$telefono: 480px;
+$tablet: 762px;
+$desktop: 992px;
+$desktopXL: 1200px;

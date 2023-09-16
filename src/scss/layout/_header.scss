@@ -1,0 +1,142 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-color: #3EBFFF;
+    width: 100%;
+    transition:  position .4s, transform .4s;
+    
+    &.fixed {
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        box-shadow: .3rem .3rem .8rem #333;
+        z-index: 10;
+    }
+    
+    
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        padding: 3.5rem 0;
+
+        &__logo {
+            display: inline-flex;
+
+            img {
+                height: 3rem;
+            }
+        }
+
+        &__menu {
+
+            @include m.maxDesktop {
+                background-color: #fff;
+                border-radius: 1rem 0 1rem 1rem;
+                max-width: 76.8rem;
+                padding: 3rem;
+                position: fixed;
+                right: -100%;
+                top: -5%;
+                transform: translate(-12%,50%);
+                transition: right .4s;                
+                width: 80%;
+                box-shadow: 8px 9px 14px 0px #333;
+                z-index: 10;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    top: -12px;                    
+                    right: -12px;
+                    height: 0;
+                    transform: rotate(45deg);                    
+                    border-right: 25px solid transparent;
+                    border-bottom: 25px solid v.$blanco;                    
+                }
+            }
+
+        }
+
+        .show-menu {
+            right: 0%;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;           
+
+            @include m.Desktop {
+                flex-direction: row;
+                gap: 2rem;                
+            }
+        }
+
+        &__item {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            transition: background-color .5s ease, text-transform .5s;
+
+            &:hover {
+                background-color: v.$amarillo;
+                text-transform: uppercase;
+            }
+            
+            @include m.Desktop {
+                &:hover {
+                    background-color: #6bceff;
+                    text-transform: uppercase;
+                }   
+            }
+
+                     
+
+            a{
+                color: v.$azulDesaturadoOscuro;
+                
+                &:hover {
+                    font-family: v.$fuenteFraunces;
+                }
+                @include m.Desktop {
+                    color: v.$blanco;
+                }
+            }
+
+            
+        }
+
+
+        &__toggle,
+        &__close {
+            cursor: pointer;
+        }
+
+        &__toggle {
+            display: block;
+
+            @include m.Desktop {
+                display: none;
+            }
+        }
+
+        // &__close::before {
+        //     // display: none;
+        //     background: url('../../../build/img/close.svg') no-repeat;
+        //     background-size: cover;
+        //     background-position: center center;
+        //     width: 22px;
+        //     height: 22px;
+
+        //     // @include m.Desktop {
+        //     //     display: none;
+        //     // }
+        // }
+    }
+}

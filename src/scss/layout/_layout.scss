@@ -1,0 +1,230 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        .item1 {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+
+    .item2,
+    .item4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 0;
+
+        @include m.tablet {
+            padding: 0;
+        }
+    }
+
+    &__grid {
+        .img-mobile {
+            display: block;
+
+            @include m.tablet {
+                display: none;
+            }
+        }
+
+        .img-desktop {
+            display: none;
+
+            @include m.tablet {
+                display: block;
+            }
+        }
+
+        .description {
+            width: 85%;
+            max-width: 45rem;
+            margin: 0 auto;
+            text-align: center;
+            // padding: 5.5rem 0;
+
+            @include m.tablet {
+                text-align: left;
+            }
+
+            @include m.Desktop {
+                padding-inline: 3.5rem;
+            }
+
+            h2 {
+                font-family: v.$fuenteFraunces;
+                font-weight: 900;
+                font-size: 3.5rem;
+                color: v.$azulDesaturadoOscuro;
+
+                @include m.Desktop {
+                    font-size: 4rem;
+                }
+            }
+
+            p {
+                margin: 2.5rem 0;
+                line-height: 1.5;
+                font-family: v.$fuenteBarlow;
+                color: v.$azulGrisaceoOscuro;
+
+                @include m.tablet {
+                    font-size: 1.5rem;
+                }
+            }
+
+            a {
+                font-family: v.$fuenteFraunces;
+                text-transform: uppercase;
+                color: v.$azulDesaturadoOscuro;
+                font-weight: 900;
+
+                @include m.tablet {
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+    }
+
+    &--card {
+        position: relative;
+        width: 100%;
+        height: 75rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        @include m.tablet {
+            height: auto;
+        }
+
+
+        .img {
+            position: absolute;
+            background-size: cover;
+            background-position: center center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .cereza {
+            background-image: url('../../../build/img/mobile/image-graphic-design.jpg');
+
+            @include m.tablet {
+                background-image: url('../../../build/img/desktop/image-graphic-design.jpg');
+            }
+        }
+
+        .naranja {
+            background-image: url('../../../build/img/mobile/image-photography.jpg');
+
+            @include m.tablet {
+                background-image: url('../../../build/img/desktop/image-photography.jpg');
+            }
+        }
+
+        .card--description {
+            position: relative;
+            z-index: 1;            
+            width: 85%;
+            text-align: center;
+
+            h2 {
+                font-family: v.$fuenteFraunces;
+                font-weight: 900;
+                font-size: 3.5rem;
+                margin-bottom: 3.5rem;
+
+                @include m.tablet {
+                    margin-bottom: 2.8rem;
+                }
+            }
+
+            p {
+                font-family: v.$fuenteBarlow;
+                line-height: 1.5;
+                max-width: 375px;
+                margin: 0 auto 5rem auto;
+
+                @include m.tablet {
+                    font-size: 1.5rem;
+                    width: 85%;
+                    margin: 0 auto 4rem auto;
+                    
+                }
+
+                @include m.Desktop {
+                    font-size: 1.6rem;
+                    margin: 0 auto 5rem auto;
+                }
+            }
+        }
+    }
+
+}
+
+.item2 a,
+.item4 a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+
+    &::before {
+        content: "";
+        border-radius: 2rem;
+        bottom: 0;
+        height: 8px;
+        left: -4px;
+        position: absolute;
+        width: 110%;
+        z-index: -100;
+        transition: opacity .3s ease-in;
+    }
+
+    &:hover::before {
+        opacity: .5;
+    }
+    
+}
+
+.item2 a::before {
+    background: v.$amarillo;
+}
+
+.item4 a::before {
+    background: v.$rosa;
+}
+
+.item5 {
+    .card--description {
+
+        h2 {
+            color: v.$cianOscuro;
+        }
+
+        p {
+            color: v.$cianOscuro;
+        }
+    }
+}
+
+.item6 {
+    h2 {
+        color: v.$azulOscuro;
+    }
+
+    p {
+        color: v.$azulOscuro;
+    }
+}

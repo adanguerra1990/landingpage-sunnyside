@@ -1,0 +1,16 @@
+@use 'base/variables' as v;
+
+::-webkit-scrollbar {
+    width: 0.6rem;
+    border-radius: .5rem;
+    backdrop-filter: blur(24px);
+    background-color: #3EBFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a2e0ff;
+
+    &:hover {
+        background-color: v.$amarillo;
+    }
+}

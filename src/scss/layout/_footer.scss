@@ -1,0 +1,77 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$cianfooter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem 0;
+
+    &__container{
+        
+        .footer-logo {
+            width: 18rem;
+            margin: 0 auto;            
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+            margin: 3rem 0 7rem 0;
+
+            a {
+                color: v.$cianModerado;
+                font-size: 2.2rem;
+                &:hover {
+                    color: v.$blanco;
+                }
+            }
+        }
+        .footer-social{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 3rem;
+        }
+    }
+    
+}
+
+.social {
+                
+    svg{
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(1.5);
+        }
+        path{
+            transition: fill .5s ease-in-out;
+            &:hover {
+                fill: v.$blanco;
+            }
+        }
+        
+    }
+} 
+
+.scrollup {
+    position: fixed;
+    right: 2rem;
+    bottom: -50%;
+    background-color: #3ebfff;
+    padding: .6rem;
+    border-radius: .5rem;
+    box-shadow: 8px 9px 14px 0 #333;
+    z-index: 10;
+    transition: bottom .4s, transform .4s;
+
+    &:hover {
+        transform: translateY(-0.8rem);
+    }
+}
+
+.show-scroll {
+    bottom: 5rem;
+}

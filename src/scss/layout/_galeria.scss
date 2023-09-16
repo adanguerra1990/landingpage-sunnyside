@@ -1,0 +1,38 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include m.tablet {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .img1 {
+        grid-row: 2 / 3;
+
+        @include m.tablet {
+            grid-row: 1 / 3;
+            grid-column: 3 / 3;
+        }
+    }
+
+    .mobile{
+        display: block;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    .desktop {
+        display: none;
+
+        @include m.tablet {
+            display: block;
+        }
+    }
+    
+
+}

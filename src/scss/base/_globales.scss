@@ -1,0 +1,53 @@
+@use 'variables' as v;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */ 
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+    margin: 0;
+}
+
+
+body {
+    font-size: 1.8rem;
+
+    &.fijar-body {
+        overflow: hidden;
+    }
+    &.fixed-body {
+        padding-top: 8.6rem;
+    }
+}
+
+h1{
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-family: v.$fuenteBarlow;
+    font-weight: 600;
+}
+
+ul {    
+    padding: 0;
+}
+li {
+    list-style: none;
+    padding: 0;
+}
+
+.container {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
