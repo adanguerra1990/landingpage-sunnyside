@@ -92,8 +92,8 @@ const sr = ScrollReveal({
 })
 
 sr.reveal(`.home__title, .home__img`);
-sr.reveal(`.item2`, {origin: 'left'});
-sr.reveal(`.item4`, {origin: 'right'});
+sr.reveal(`.reveal-1`, {origin: 'left'});
+sr.reveal(`.reveal-2`, {origin: 'right'});
 sr.reveal(`.card--description`, {origin: 'bottom'});
 sr.reveal(`.testimonial__card`, { scale: 0.85 });
 sr.reveal(`.footer__container`);
